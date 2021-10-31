@@ -32,6 +32,13 @@ db/TABLE_CREATION.sql
 db/RECORDS_CREATION.sql
 ~~~
 
+## Zookeeper Setup
+
+- download package and unzip
+- change `\conf\zoo.cfg`
+- start server `\bin\zkServer.cmd` (it is also included in startup steps later)
+- start client `\bin\zkCli.cmd`
+
 ## Folder Setup
 
 - create `D:\tmp\jh\download`
@@ -72,6 +79,7 @@ cd to scripts folder, modify [parent_folder] in start.cmd
 
 - `dostart.py -m all`
   - `dostart.py -m msg`
+  - `dostart.py -m zkserver`
   - `dostart.py -m receiver`
   - `dostart.py -m parser`
   - `dostart.py -m loader`
@@ -84,3 +92,11 @@ start default ftp job
 
 start ftp job with a specific `cob_date` and `feed_id`
 > dostart.py -m ftp -d 20211002 -f 2
+
+## Parser Cmd
+
+start parer instance, instance id will be auto generated
+> dostart.py -m parser
+
+start a specific parer instance
+> dostart.py -m parser --id 1
