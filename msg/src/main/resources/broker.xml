@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration xmlns="urn:activemq" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:activemq /schema/artemis-configuration.xsd">
+   <core xmlns="urn:activemq:core">
+      <persistence-enabled>false</persistence-enabled>
+      <acceptors>
+         <acceptor name="netty">tcp://0.0.0.0:61616?protocols=AMQP,CORE</acceptor>
+      </acceptors>
+      <security-settings>
+         <security-setting match="#">
+            <permission roles="dev" type="createAddress"/>
+            <permission roles="dev" type="deleteAddress"/>
+            <permission roles="dev" type="createDurableQueue"/>
+            <permission roles="dev" type="deleteDurableQueue"/>
+            <permission roles="dev" type="createNonDurableQueue"/>
+            <permission roles="dev" type="deleteNonDurableQueue"/>
+            <permission roles="dev" type="consume"/>
+            <permission roles="dev" type="send"/>
+         </security-setting>
+      </security-settings>
+   </core>
+</configuration>

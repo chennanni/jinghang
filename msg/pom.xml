@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>msg</artifactId>
+
+    <parent>
+        <artifactId>jinghang</artifactId>
+        <groupId>com.max</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+        <activemq.basedir>${project.basedir}/../../../..</activemq.basedir>
+    </properties>
+
+    <dependencies>
+        <!--Spring-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!--Message Queue-->
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>artemis-amqp-protocol</artifactId>
+            <version>2.18.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>artemis-selector</artifactId>
+            <version>2.18.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>artemis-core-client</artifactId>
+            <version>2.18.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>artemis-commons</artifactId>
+            <version>2.18.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>artemis-server</artifactId>
+            <version>2.18.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>artemis-journal</artifactId>
+            <version>2.18.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.amqphub.spring</groupId>
+            <artifactId>amqp-10-jms-spring-boot-starter</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>artemis-maven-plugin</artifactId>
+                <version>2.18.0</version>
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>runClient</id>-->
+<!--                        <goals>-->
+<!--                            <goal>runClient</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <clientClass>com.max.msg.MsgApplication</clientClass>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.activemq.examples.broker</groupId>
+                        <artifactId>spring-boot-integration</artifactId>
+                        <version>2.18.0</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.0.4.RELEASE</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
