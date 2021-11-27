@@ -25,7 +25,7 @@ public class MessageListener {
    @Autowired
    CoreProcessor processor;
 
-   @JmsListener(destination = "${listen.to.queue}_${instance.id}")
+   @JmsListener(destination = "${listen.to.queue}")
    public void receiveStartMessage(String message) {
       logger.info("***********************NEW MESSAGE RECEIVED*********************** ");
       Map<String, String> msgMap = msgTempalte.deformat(message);
