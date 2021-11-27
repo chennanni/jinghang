@@ -98,7 +98,11 @@ start default ftp job
 > dostart.py -m ftp
 
 start ftp job with a specific `cob_date` and `feed_id`
+> dostart.py -m ftp -d 20211002 -f 1
+> 
 > dostart.py -m ftp -d 20211002 -f 2
+> 
+> dostart.py -m ftp -d 20211002 -f 3
 
 ## Parser Cmd
 
@@ -107,3 +111,7 @@ start parer instance, instance id will be auto generated
 
 start a specific parer instance
 > dostart.py -m parser --id 1
+
+## TODO
+
+- fix the log location when starting with dostart.py script, currently it's not generating in target location

@@ -43,6 +43,8 @@ elif param_module == 'ftp':
     os.system("start \"ftp\" ; start.cmd ftp " + ftp_args)
 elif param_module == 'receiver':
     os.system("start \"receiver\" ; start.cmd receiver")
+elif param_module == 'dispatcher':
+    os.system("start \"dispatcher\" ; start.cmd dispatcher")
 elif param_module == 'parser':
     if param_host != None and param_id != None:
         parser_args = "--host %s --id %s"%(param_host, param_id)
@@ -61,9 +63,10 @@ elif param_module == 'all':
     os.system("start \"msg\" ; start.cmd msg")
     os.system("start \"zkserver\" ; start.cmd zkserver")
     os.system("start \"receiver\" ; start.cmd receiver")
+    os.system("start \"dispatcher\" ; start.cmd dispatcher")
     os.system("start \"parser\" ; start.cmd parser")
     os.system("start \"loader\" ; start.cmd loader")
-elif param_module == None:
+else:
     print("please select a correct module")
 
 print("end...")

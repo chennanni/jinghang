@@ -17,9 +17,9 @@
     <!-- main applications -->
     <module>ftp</module>
     <module>receiver</module>
+    <module>dispatcher</module>
     <module>parser</module>
     <module>loader</module>
-      <module>dispatcher</module>
   </modules>
 
   <parent>

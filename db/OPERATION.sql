@@ -24,7 +24,7 @@ select * from trade;
 select * from trade order by 1 desc;
 INSERT INTO db01.trade (uid,trade_type,action,dataset_id,system_id,account_uid,instrument_uid) VALUES (1000,'others','buy',36,1,null,null);
 
-load data infile "F:\\CODEBASE\\tmp\\jh\\output\\20210930_totoro01_trade.csv" into table `db01`.`trade`
+load data infile "F:\\CODEBASE\\tmp\\jh\\output\\20211002_1_Totoro_01_trade.csv" into table `db01`.`trade`
 fields terminated by ';' 
 lines terminated by '\n'
 ignore 1 lines
@@ -34,11 +34,11 @@ ignore 1 lines
 -- check risk
 select * from risk;
 select * from risk order by 1 desc;
-load data infile "F:\\CODEBASE\\tmp\\jh\\output\\20210930_totoro01_risk.csv" into table `db01`.`risk`
+load data infile "F:\\CODEBASE\\tmp\\jh\\output\\20211002_1_Totoro_01_risk.csv" into table `db01`.`risk`
 fields terminated by ';' 
 lines terminated by '\n'
 ignore 1 lines
-(`trade_uid`,`infotype_id`,`amount`)
+(`trade_uid`,`infotype_id`,`amount`,`dataset_id`)
 ;
 
 show global variables like "%datadir%";

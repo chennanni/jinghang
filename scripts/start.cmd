@@ -20,6 +20,11 @@ echo start receiver
 java -jar %jh_folder%\jinghang\receiver\target\receiver-1.0-SNAPSHOT.jar
 )
 
+if %1==dispatcher (
+echo start dispatcher
+java -jar %jh_folder%\jinghang\dispatcher\target\dispatcher-1.0-SNAPSHOT.jar
+)
+
 if %1==parser (
 echo start parser
 java -jar %jh_folder%\jinghang\parser\target\parser-1.0-SNAPSHOT.jar %2 %3 %4 %5
