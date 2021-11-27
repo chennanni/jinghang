@@ -34,7 +34,15 @@ public class MessageSender {
 
    public void send(String message) {
       jmsTemplate.convertAndSend(queue, message);
-      logger.info("COMPLETE - send msg: " + message);
+      logger.info("COMPLETE - send msg, [queue]: " + queue + "; [msg]: " + message);
+   }
+
+   public String getQueue() {
+      return queue;
+   }
+
+   public void setQueue(String queue) {
+      this.queue = queue;
    }
 
 }
