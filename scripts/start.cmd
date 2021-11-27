@@ -2,8 +2,8 @@
 echo "*** start - calling start.cmd script ***"
 
 Rem change folder path to where the project is located at
-set jh_folder="D:\codebase"
-set zk_folder="D:\apache-zookeeper-3.7.0-bin"
+set jh_folder="F:\CODEBASE"
+set zk_folder="F:\apache-zookeeper-3.7.0-bin"
 
 if %1==msg (
 echo start msg

@@ -36,14 +36,21 @@ db/RECORDS_CREATION.sql
 
 - download package and unzip
 - change `\conf\zoo.cfg`
+
+~~~
+dataDir=F:\\apache-zookeeper-3.7.0-bin\\data
+dataqLogDir=F:\\apache-zookeeper-3.7.0-bin\\logs
+~~~
+
+- change start.cmd, the folder location in the beginning
 - start server `\bin\zkServer.cmd` (it is also included in startup steps later)
 - start client `\bin\zkCli.cmd`
 
 ## Folder Setup
 
-- create `D:\tmp\jh\download`
-- create `D:\tmp\jh\input`
-- create `D:\tmp\jh\output`
+- create `F:\CODEBASE\tmp\jh\download`
+- create `F:\CODEBASE\tmp\jh\input`
+- create `F:\CODEBASE\tmp\jh\output`
 
 ## Build
 

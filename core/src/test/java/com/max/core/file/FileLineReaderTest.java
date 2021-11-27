@@ -7,7 +7,7 @@ public class FileLineReaderTest {
     @Test
     public void testFileRead(){
         FileLineReader fileLineReader = new FileLineReader();
-        String path = "D:\\tmp\\jh\\input\\20210930_totoro01_risk.txt";
+        String path = "F:\\CODEBASE\\tmp\\jh\\input\\20210930_totoro01_risk.txt";
         fileLineReader.read(path);
     }
 
