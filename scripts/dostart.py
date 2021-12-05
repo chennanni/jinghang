@@ -59,6 +59,12 @@ elif param_module == 'zkserver':
     os.system("start \"zkserver\" ; start.cmd zkserver")
 elif param_module == 'zkclient':
     os.system("start \"zkclient\" ; start.cmd zkclient")
+elif param_module == 'geode_start':
+    os.system("start \"geode_start\" ; start.cmd geode_start")
+elif param_module == 'geode_stop':
+    os.system("start \"geode_stop\" ; start.cmd geode_stop")
+elif param_module == 'cache':
+    os.system("start \"cache\" ; start.cmd cache")
 elif param_module == 'all':
     os.system("start \"msg\" ; start.cmd msg")
     os.system("start \"zkserver\" ; start.cmd zkserver")
@@ -66,6 +72,9 @@ elif param_module == 'all':
     os.system("start \"dispatcher\" ; start.cmd dispatcher")
     os.system("start \"parser\" ; start.cmd parser")
     os.system("start \"loader\" ; start.cmd loader")
+    os.system("start \"geode_start\" ; start.cmd geode_start")
+    time.sleep(10)
+    os.system("start \"cache\" ; start.cmd cache")
 else:
     print("please select a correct module")
 

@@ -46,6 +46,17 @@ dataqLogDir=F:\\apache-zookeeper-3.7.0-bin\\logs
 - start server `\bin\zkServer.cmd` (it is also included in startup steps later)
 - start client `\bin\zkCli.cmd`
 
+## Geode Setup
+
+Install: https://geode.apache.org/docs/guide/114/prereq_and_install.html
+
+- download package and unzip
+- setup path and classpath
+
+Setup: change `start.cmd`, the folder location in the beginning
+
+- `set geode_folder="xxx"`
+
 ## Folder Setup
 
 - create `F:\CODEBASE\tmp\jh\download`
@@ -90,6 +101,8 @@ cd to scripts folder, modify [parent_folder] in start.cmd
   - `dostart.py -m receiver`
   - `dostart.py -m parser`
   - `dostart.py -m loader`
+  - `dostart.py -m geode_start`
+  - `dostart.py -m geode_cache`
 - `dostart.py -m ftp`
 
 ## FTP Cmd
@@ -112,6 +125,20 @@ start parer instance, instance id will be auto generated
 start a specific parer instance
 > dostart.py -m parser --id 1
 
+## Geode Cmd
+
+start cache locator and server (it's included in dostart all)
+
+> dostart.py -m geode_start
+
+insert some records (it's included in dostart all)
+> dostart.py -m geode_cache
+
+stop all (**MAKE SURE TO STOP EVERYTIME**)
+> dostart.py -m geode_stop
+
 ## TODO
 
+- the parser seems only works in IDE, not by start script, need to check
+- the cache seems needs to be manually started
 - fix the log location when starting with dostart.py script, currently it's not generating in target location

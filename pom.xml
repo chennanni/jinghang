@@ -14,6 +14,7 @@
     <!-- support modules -->
     <module>core</module>
     <module>msg</module>
+    <module>cache</module>
     <!-- main applications -->
     <module>ftp</module>
     <module>receiver</module>

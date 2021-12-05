@@ -1,5 +1,6 @@
 package com.max.parser.mapper;
 
+import com.max.cache.service.CacheClient;
 import com.max.core.file.FileTemplate;
 import com.max.core.file.SourceFile;
 import com.max.parser.entity.Context;
@@ -10,6 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -18,6 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 @Component
+@ComponentScan(value="com.max.cache.service")
 public class Mapper03 implements MapperCore {
 
     private static final Logger logger = LoggerFactory.getLogger(Mapper03.class);
@@ -30,6 +33,9 @@ public class Mapper03 implements MapperCore {
 
     @Autowired
     CalService01 calService01;
+
+    @Autowired
+    CacheClient cacheClient;
 
     public Mapper03() {
         init();
@@ -89,6 +95,13 @@ public class Mapper03 implements MapperCore {
             String tradeUid = content[header.get("trade")];
             String riskType = content[header.get("risk_type")];
             String riskAmount = content[header.get("risk_amount")];
+
+            try {
+                cacheClient.get();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
             Risk r = new Risk();
             r.setTradeUid(tradeUid);
             r.setInfotypeId(infotypeMap.get(riskType));

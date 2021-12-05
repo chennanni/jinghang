@@ -4,6 +4,7 @@ echo "*** start - calling start.cmd script ***"
 Rem change folder path to where the project is located at
 set jh_folder="F:\CODEBASE"
 set zk_folder="F:\apache-zookeeper-3.7.0-bin"
+set geode_folder="F:\apache-geode-1.14.0"
 
 if %1==msg (
 echo start msg
@@ -43,6 +44,21 @@ echo start zookeeper server
 if %1==zkclient (
 echo start zookeeper client
 %zk_folder%\bin\zkCli.cmd
+)
+
+if %1==geode_start (
+echo start geode
+%geode_folder%\bin\gfsh run --file=start.gfsh
+)
+
+if %1==geode_stop (
+echo stop geode
+%geode_folder%\bin\gfsh run --file=stop.gfsh
+)
+
+if %1==cache (
+echo start cache
+java -jar %jh_folder%\jinghang\cache\target\cache-1.0-SNAPSHOT.jar
 )
 
 echo "*** end - calling start.cmd script***"
