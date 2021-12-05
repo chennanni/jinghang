@@ -1,5 +1,8 @@
 *.iml
+*.jar
+*.log
 .idea
 venv
 target
 logs
+/scripts/locator1/*
